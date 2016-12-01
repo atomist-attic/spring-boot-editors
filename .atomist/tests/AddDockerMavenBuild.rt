@@ -25,7 +25,12 @@ let pomFile = "pom.xml"
 let base_docker_repository = "localhost:5000"
 
 given
-  ArchiveRoot
+
+  README.md = """
+  # Atomist Spring Boot Editors
+
+  A set of editors for Spring Boot projects.
+"""
 
   pom.xml = """<project>
     <modelVersion>4.0.0</modelVersion>
