@@ -110,11 +110,11 @@ when
 
 then
   fileContains pomFile "git-commit-id-plugin"
-  and fileContains pomFile "docker-maven-plugin"
-  and fileContains pomFile "maven-dependency-plugin"
-  and fileExists "src/main/docker/Dockerfile"
-  and fileContains pomFile base_docker_repository
-  and fileContains "README.md" "## Create a docker container"
+    and fileContains pomFile "docker-maven-plugin"
+    and fileContains pomFile "maven-dependency-plugin"
+    and fileExists "src/main/docker/Dockerfile"
+    and fileContains pomFile base_docker_repository
+    and fileContains "README.md" "## Create a docker container"
 
 scenario AddDockerMavenBuild should not work on an empty project
 

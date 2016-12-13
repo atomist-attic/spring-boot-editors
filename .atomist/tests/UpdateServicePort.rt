@@ -52,5 +52,5 @@ when
 
 then
   fileExists dockerfile
-  and fileContains dockerfile "EXPOSE 8181"
-  and fileContains dockerfile "blah"
+    and fileContains dockerfile "EXPOSE 8181"
+    and fileContains dockerfile "blah"

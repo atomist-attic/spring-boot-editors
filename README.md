@@ -2,9 +2,10 @@
 
 [![Slack Status](https://join.atomist.com/badge.svg)](https://join.atomist.com)
 
-This [Rug](http://docs.atomist.com/) archive has an example editors
-that showcase some of the features of Rug.  Take a look inside the
+This [Rug](http://docs.atomist.com/) archive contains editors for [Spring Boot][spring-boot] projects.  Take a look inside the
 `.atomist` folder.
+
+[spring-boot]: https://projects.spring.io/spring-boot/
 
 ## Rugs
 
