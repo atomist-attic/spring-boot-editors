@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+
 scenario UpdateServicePort should update application.properties service port
 
 let propsFile = "src/main/resources/application.properties"
 
-let servicePort = "8181"
+let service_port = "8181"
 
 given
   src/main/resources/application.properties = "server.port=8080"
@@ -33,7 +33,7 @@ scenario UpdateServicePort should update Dockerfile expose when present
 
 let dockerfile = "src/main/docker/Dockerfile"
 
-let servicePort = "8181"
+let service_port = "8181"
 
 given
   src/main/docker/Dockerfile = """

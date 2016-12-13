@@ -45,6 +45,40 @@ the Editor and push the commit to GitHub.
 [docker-maven-plugin]: https://github.com/spotify/docker-maven-plugin
 [maven-dependency-plugin]: https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-dependency-plugin
 
+### UpdateServicePort
+
+The UpdateServicePort Editor sets the service port property in [Spring Boot][spring-boot] `application.properties` file and a corresponding [Docker][docker] Dockerfile setting.
+
+[spring-boot]: https://projects.spring.io/spring-boot/
+[docker]: https://www.docker.com/
+
+#### Prerequisites
+
+Before running this Editor, you must have the following prerequisites
+satisfied.
+
+*   A git repository
+*   The project must contain a Spring Boot `src/main/resources/application.properties` file
+*   The project must contain a `src/main/docker/Dockerfile` file
+
+#### Parameters
+
+To run this editor, you must supply the following parameters:
+
+*   `service_port`: The port to switch the Spring Boot service to
+
+#### Running
+
+Run it as follows:
+
+```
+$ cd to/your/repo
+$ rug edit atomist-rugs:spring-boot-editors:UpdateServicePort
+```
+
+This will amend your `application.properties` and `Dockerfile` to specify the newly indicated service port. If you are happy with the change, commit the changes made by
+the Editor and push the commit to GitHub.
+
 ## Support
 
 General support questions should be discussed in the `#support`

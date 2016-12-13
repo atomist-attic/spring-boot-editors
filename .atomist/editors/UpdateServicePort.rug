@@ -20,12 +20,12 @@
 @tag "spring-boot"
 editor UpdateServicePort
 
-@description "Port to Switch to"
+@description "port to switch to"
 @displayName "Service Port"
-param servicePort: ^[1-9][0-9]*$
+param service_port: ^[1-9][0-9]*$
 
 with properties when path = "src/main/resources/application.properties"
-  do setProperty "server.port" servicePort
+  do setProperty "server.port" service_port
 
 with dockerfile when path = "src/main/docker/Dockerfile"
-  do addOrUpdateExpose servicePort
+  do addOrUpdateExpose service_port
