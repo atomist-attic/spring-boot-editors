@@ -23,7 +23,10 @@ editor AddDockerMavenBuild
 
 precondition IsMaven
 
-@description "Base name of the docker repository to push artifacts to (i.e. the address before the first '/')"
+@displayName "Maven Artifact ID"
+@description "base name of the Docker repository to push artifacts to (i.e. the address before the first '/')"
+@validInput "a valid base name for a Docker repository"
+@minLength 1
 param base_docker_repository: ^.*$
 
 AddGitMavenPlugin

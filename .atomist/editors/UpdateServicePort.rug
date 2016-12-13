@@ -20,8 +20,10 @@
 @tag "spring-boot"
 editor UpdateServicePort
 
-@description "port to switch to"
 @displayName "Service Port"
+@description "port to switch to"
+@validInput "a valid numerical port number"
+@minLength 1
 param service_port: ^[1-9][0-9]*$
 
 with properties when path = "src/main/resources/application.properties"
