@@ -1,5 +1,6 @@
 # Atomist 'spring-boot-editors'
 
+[![Build Status](https://travis-ci.org/atomist-rugs/spring-boot-editors.svg?branch=master)](https://travis-ci.org/atomist-rugs/spring-boot-editors)
 [![Slack Status](https://join.atomist.com/badge.svg)](https://join.atomist.com)
 
 This [Rug](http://docs.atomist.com/) archive contains editors for [Spring Boot][spring-boot] projects.  Take a look inside the
