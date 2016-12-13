@@ -10,7 +10,7 @@ that showcase some of the features of Rug.  Take a look inside the
 
 ### AddDockerMavenBuild
 
-The AddDockerMavenBuild Editor adds [Docker][apache] artifacts to an existing [Maven][maven] project.
+The AddDockerMavenBuild Editor adds [Docker][docker] artifacts to an existing [Maven][maven] project.
 
 [maven]: https://maven.apache.org/
 [docker]: https://www.docker.com/
