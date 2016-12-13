@@ -35,7 +35,8 @@ Run it as follows:
 
 ```
 $ cd to/your/repo
-$ rug edit atomist-rugs:spring-boot-editors:AddDockerMavenBuild
+$ rug edit atomist-rugs:spring-boot-editors:AddDockerMavenBuild \
+    base_docker_repository=my-docker-repository \
 ```
 
 This will amend your `pom.xml` to include the [Git Commit Id Maven Plugin][git-commit-id-maven-plugin], the [Docker Maven Plugin][docker-maven-plugin], the [Maven Dependency Plugin][maven-dependency-plugin] with appropriate settings to package using Docker. It will also add a working `Dockerfile` for your project. Finally it will amend the existing `README.md` with instructions for building and packaging for Docker. If you are happy with the change, commit the changes made by
@@ -73,7 +74,8 @@ Run it as follows:
 
 ```
 $ cd to/your/repo
-$ rug edit atomist-rugs:spring-boot-editors:UpdateServicePort
+$ rug edit atomist-rugs:spring-boot-editors:UpdateServicePort \
+    service_port=8181 \
 ```
 
 This will amend your `application.properties` and `Dockerfile` to specify the newly indicated service port. If you are happy with the change, commit the changes made by
