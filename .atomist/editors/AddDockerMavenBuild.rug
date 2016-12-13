@@ -13,11 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+@description "adds Maven infrastructure and source files to package and distribute project as a Docker Image"
 @tag "java"
 @tag "spring"
 @tag "spring-boot"
 @tag "docker"
-@description "adds Maven infrastructure and source files to package and distribute project as a Docker Image"
 editor AddDockerMavenBuild
 
 precondition IsMaven
@@ -35,11 +36,11 @@ with file f when path = "pom.xml"
   do replace "{{docker-repo}}" base_docker_repository
 
 
+@description "Adds Docker Maven dependency plugin to the pom"
 @tag "java"
 @tag "spring"
 @tag "spring-boot"
 @tag "docker"
-@description "Adds Docker Maven dependency plugin to the pom"
 editor AddDockerMavenDependencyPlugin
 
 let mavenDependencyPlugin = """<plugin>
@@ -72,11 +73,11 @@ with pom p when path = "pom.xml"
   do addOrReplaceBuildPlugin "org.apache.maven.plugins" "maven-dependency-plugin" mavenDependencyPlugin
 
 
+@description "Adds Docker Maven plugin to the pom"
 @tag "java"
 @tag "spring"
 @tag "spring-boot"
 @tag "docker"
-@description "Adds Docker Maven plugin to the pom"
 editor AddDockerMavenPlugin
 
 let dockerMavenPlugin = """<plugin>
@@ -120,11 +121,11 @@ with pom p when path = "pom.xml"
   do addOrReplaceBuildPlugin "pl.project13.maven" "git-commit-id-plugin" gitPlugin
 
 
+@description "Add Dockerfile to a Spring Boot project"
 @tag "java"
 @tag "spring"
 @tag "spring-boot"
 @tag "docker"
-@description "Add Dockerfile to a Spring Boot project"
 editor AddDockerfile
 
 let template = "Dockerfile.vm"
@@ -132,11 +133,12 @@ let template = "Dockerfile.vm"
 with project p
   do merge template to "src/main/docker/Dockerfile"
 
+
+@description "Add instructions for creating Docker image to Spring Boot project README"
 @tag "java"
 @tag "spring"
 @tag "spring-boot"
 @tag "docker"
-@description "Add instructions for creating Docker image to Spring Boot project README"
 editor AddReadmeDocumentation
 
 let dockerReadmeDocs = """

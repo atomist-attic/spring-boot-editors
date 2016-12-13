@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+ 
 scenario AddDockerMavenBuild should add the new files and entries for Docker
 
 let pomFile = "pom.xml"

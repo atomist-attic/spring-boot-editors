@@ -1,9 +1,6 @@
 group: atomist-rugs
 artifact: spring-boot-editors
 version: "0.1.0"
-
-requires: "[0.4.0,1.0.0)"
-
+requires: "[0.5.4,1.0.0)"
 dependencies:
-
 extensions:
