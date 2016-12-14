@@ -23,7 +23,7 @@ editor AddDockerMavenBuild
 
 precondition IsMaven
 
-@displayName "Maven Artifact ID"
+@displayName "Base Docker Repository"
 @description "base name of the Docker repository to push artifacts to (i.e. the address before the first '/')"
 @validInput "a valid base name for a Docker repository"
 @minLength 1
