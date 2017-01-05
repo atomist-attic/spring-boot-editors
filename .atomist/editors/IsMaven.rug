@@ -15,4 +15,4 @@
  */
 
 predicate IsMaven
-  with pom
+  with Pom

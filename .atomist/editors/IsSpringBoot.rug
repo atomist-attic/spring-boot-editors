@@ -15,4 +15,4 @@
  */
 
 predicate IsSpringBoot
-  with spring.bootProject
+  with SpringBootProject

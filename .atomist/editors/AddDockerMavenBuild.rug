@@ -35,7 +35,7 @@ AddDockerMavenDependencyPlugin
 AddDockerfile
 AddReadmeDocumentation
 
-with file f when path = "pom.xml"
+with File f when path = "pom.xml"
   do replace "{{docker-repo}}" base_docker_repository
 
 
@@ -72,7 +72,7 @@ let mavenDependencyPlugin = """<plugin>
 				</executions>
 			</plugin>"""
 
-with pom p when path = "pom.xml"
+with Pom p when path = "pom.xml"
   do addOrReplaceBuildPlugin "org.apache.maven.plugins" "maven-dependency-plugin" mavenDependencyPlugin
 
 
@@ -104,7 +104,7 @@ let dockerMavenPlugin = """<plugin>
 				</configuration>
 			</plugin>"""
 
-with pom p when path = "pom.xml"
+with Pom p when path = "pom.xml"
   do addOrReplaceBuildPlugin "com.spotify" "docker-maven-plugin" dockerMavenPlugin
 
 
@@ -120,7 +120,7 @@ let gitPlugin = """<plugin>
                 <artifactId>git-commit-id-plugin</artifactId>
             </plugin>"""
 
-with pom p when path = "pom.xml"
+with Pom p when path = "pom.xml"
   do addOrReplaceBuildPlugin "pl.project13.maven" "git-commit-id-plugin" gitPlugin
 
 
@@ -133,7 +133,7 @@ editor AddDockerfile
 
 let template = "Dockerfile.vm"
 
-with project p
+with Project p
   do merge template to "src/main/docker/Dockerfile"
 
 
@@ -163,5 +163,5 @@ $ ./mvnw clean package docker:build -DpushImage
 ```
 """
 
-with file f when path = "README.md"
+with File f when path = "README.md"
   do append dockerReadmeDocs

@@ -26,8 +26,8 @@ editor UpdateServicePort
 @minLength 1
 param service_port: ^[1-9][0-9]*$
 
-with properties when path = "src/main/resources/application.properties"
+with Properties when path = "src/main/resources/application.properties"
   do setProperty "server.port" service_port
 
-with dockerfile when path = "src/main/docker/Dockerfile"
+with DockerFile when path = "src/main/docker/Dockerfile"
   do addOrUpdateExpose service_port
