@@ -24,7 +24,7 @@ editor AddSpringBootProjectToExistingProject
 @description "base directory when the new project will be added"
 @validInput "a valid directory name"
 @minLength 1
-param project_base_directory: ^.*$
+param project_base_directory: @any
 
 with Project
   do copyEditorBackingFilesWithNewRelativePath "default-spring-boot-project" project_base_directory
