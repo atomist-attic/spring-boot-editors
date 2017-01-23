@@ -1,0 +1,32 @@
+/*
+ * Copyright © 2016 Atomist, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+scenario AddSpringBootProjectToExistingProject should add a new set of Spring Boot 1.4 project files to a new directory in a project
+
+let project_base_directory = "newproject"
+
+given
+   Empty
+
+when
+  AddSpringBootProjectToExistingProject
+
+then
+  fileExists { project_base_directory + "/src/main/java/com/atomist/springboot/DefaultSpringBootApplication.java" }
+    and fileExists { project_base_directory + "/src/main/java/com/atomist/springboot/DefaultSpringBootConfiguration.java" }
+    and fileExists { project_base_directory + "/src/main/resources/application.yml" }
+    and fileExists { project_base_directory + "/src/main/resources/logback.xml" }
+    and fileExists { project_base_directory + "/src/test/java/com/atomist/springboot/DefaultSpringBootApplicationTests.java" }
