@@ -83,6 +83,56 @@ $ rug edit atomist-rugs:spring-boot-editors:UpdateServicePort \
 This will amend your `application.properties` and `Dockerfile` to specify the newly indicated service port. If you are happy with the change, commit the changes made by
 the Editor and push the commit to GitHub.
 
+### AddSpringBootProjectToExistingProject
+
+The AddSpringBootProjectToExistingProject Editor adds an initial [Spring Boot][spring-boot] project into a subdirectory of an existing project.
+
+[spring-boot]: https://projects.spring.io/spring-boot/
+
+#### Prerequisites
+
+Before running this Editor, you must have the following prerequisites
+satisfied.
+
+*   A git repository
+
+#### Parameters
+
+To run this editor, you must supply the following parameters:
+
+Name | Required | Default | Description
+-----|----------|---------|------------
+project_base_directory
+`project_base_directory` | Yes | |  A valid directory path for where your [Spring Boot][spring-boot] project will be created in the existing project.  
+`project_name` | Yes | |  A valid GitHub repository name.  It must be 21 characters or less to avoid truncating name when the its Slack channel is created.
+`artifact_id` | No | myartifact | Maven artifact ID, e.g., "fiddle-riddle".
+`group_id` | No | mygroup |  Maven group ID, e.g., "com.pany.project".
+`version` | No | 0.1.0-SNAPSHOT | [Semantic version][semver] of the project.
+`description` | No | My new project | A brief description of the project.
+
+[semver]: http://semver.org
+[spring-boot]: https://projects.spring.io/spring-boot/
+
+#### Running
+
+Run it as follows:
+
+```
+$ cd to/your/repo
+$ rug edit atomist-rugs:spring-boot-editors:AddSpringBootProjectToExistingProject \
+    project_base_directory=mynewproject \
+    project_name=pet-shop-app \
+    artifact_id=pet-shop \
+    group_id=uk.co.lndn \
+    version=0.1.0-SNAPSHOT \
+    description="Spring Boot application"
+```
+
+This will amend create a new [Spring Boot][spring-boot] project under the `mynewproject` directory in your existing project. If you are happy with the change, commit the changes made by
+the Editor and push the commit to GitHub.
+
+[spring-boot]: https://projects.spring.io/spring-boot/
+
 ## Support
 
 General support questions should be discussed in the `#support`
