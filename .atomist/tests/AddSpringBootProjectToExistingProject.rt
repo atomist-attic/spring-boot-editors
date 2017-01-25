@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-scenario AddSpringBootProjectToExistingProject should add a new set of Spring Boot 1.4 project files to a new directory in a project
+scenario AddSpringBootProjectToExistingProject
 
 let project_base_directory = "newproject"
 
@@ -25,10 +25,13 @@ when
   AddSpringBootProjectToExistingProject
 
 then
-    fileExists { project_base_directory + "/src/main/java/com/atomist/springboot/DefaultSpringBootApplication.java" }
+  fileExists { project_base_directory + "/src/main/java/com/atomist/springboot/DefaultSpringBootApplication.java" }
     and fileExists { project_base_directory + "/src/main/java/com/atomist/springboot/DefaultSpringBootConfiguration.java" }
     and fileExists { project_base_directory + "/src/main/resources/application.yml" }
     and fileExists { project_base_directory + "/src/main/resources/logback.xml" }
     and fileExists { project_base_directory + "/src/test/java/com/atomist/springboot/DefaultSpringBootApplicationTests.java" }
     and fileExists { project_base_directory + "/pom.xml" }
     and fileContains { project_base_directory + "/pom.xml" } "0.1.0-SNAPSHOT"
+    and fileContains { project_base_directory + "/pom.xml" } "newproject"
+    and fileContains { project_base_directory + "/pom.xml" } "mygroup"
+    and fileContains { project_base_directory + "/pom.xml" } "My new project"
