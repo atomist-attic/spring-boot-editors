@@ -9,7 +9,8 @@ let params: Parameter[] = [
         description: "version of Spring Boot, e.g., 1.4.4.RELEASE",
         validInput: "a valid version of Spring Boot",
         pattern: "@any",
-        required: false
+        required: false,
+        default: "1.4.4.RELEASE"
     }
 ]
 
