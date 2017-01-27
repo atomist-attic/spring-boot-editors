@@ -31,3 +31,29 @@ executor:
     branch: "n/a"
     sha: "n/a"
 
+---
+kind: "operation"
+client: "rug-cli 0.21.3"
+editor:
+  name: "atomist-rugs.rug-editors.AddTypeScript"
+  group: "atomist-rugs"
+  artifact: "rug-editors"
+  version: "0.5.0"
+  origin:
+    repo: "git@github.com:atomist-rugs/rug-editors.git"
+    branch: "master"
+    sha: "a94e3ae"
+
+---
+kind: "operation"
+client: "rug-cli 0.21.3"
+editor:
+  name: "atomist-rugs.rug-editors.AddTypeScript"
+  group: "atomist-rugs"
+  artifact: "rug-editors"
+  version: "0.5.0"
+  origin:
+    repo: "git@github.com:atomist-rugs/rug-editors.git"
+    branch: "master"
+    sha: "75d5b21"
+
