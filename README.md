@@ -133,6 +133,44 @@ the Editor and push the commit to GitHub.
 
 [spring-boot]: https://projects.spring.io/spring-boot/
 
+### SetSpringBootParentVersion
+
+The SetSpringBootParentVersion editor amends an existing `parent` block that specifies the current version of [Spring Boot][spring-boot] to a new, specified version.
+
+[spring-boot]: https://projects.spring.io/spring-boot/
+
+#### Prerequisites
+
+Before running this editor, you must have the following prerequisites
+satisfied.
+
+*   A git repository
+
+#### Parameters
+
+To run this editor, you must supply the following parameters:
+
+Name | Required | Default | Description
+-----|----------|---------|------------
+`spring_boot_version` | No | 1.4.4.RELEASE |  A valid  [Spring Boot][spring-boot] version.  
+
+[spring-boot]: https://projects.spring.io/spring-boot/
+
+#### Running
+
+Run it as follows:
+
+```
+$ cd to/your/repo
+$ rug edit atomist-rugs:spring-boot-editors:SetSpringBootParentVersion \
+    spring_boot_version=1.4.4.RELEASE
+```
+
+This will amend the current [Spring Boot][spring-boot] `parent` blocks in all the `pom.xml` files that already have a `parent` block that specifies [Spring Boot][spring-boot] through the target project. If you are happy with the change, commit the changes made by
+the editor and push the commit to GitHub.
+
+[spring-boot]: https://projects.spring.io/spring-boot/
+
 ## Support
 
 General support questions should be discussed in the `#support`

@@ -1,0 +1,42 @@
+/*
+ * Copyright © 2016 Atomist, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@description "updates Spring Boot projects parent declaration to a specific version"
+@tag "java"
+@tag "spring"
+@tag "spring-boot"
+editor SetSpringBootParentVersion
+
+@displayName "Spring Boot Version"
+@description "version of Spring Boot, e.g., 1.4.4.RELEASE"
+@validInput "a valid version of Spring Boot"
+@optional
+@default "1.4.4.RELEASE"
+param spring_boot_version: @any
+
+let default_spring_boot_parent_block = """
+<parent>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-parent</artifactId>
+  <version>1.4.4.RELEASE</version>
+  <relativePath /> <!-- lookup parent from repository -->
+</parent>
+"""
+
+let version_set_parent_block = { default_spring_boot_parent_block.replace("<version>1.4.4.RELEASE</version>", "<version>" + spring_boot_version + "</version>") }
+
+with EveryPom ep when { ep.parentArtifactId().equals("spring-boot-starter-parent") }
+  do replaceParent version_set_parent_block
