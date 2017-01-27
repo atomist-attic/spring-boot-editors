@@ -1,0 +1,13 @@
+---
+kind: "operation"
+client: "rug-cli 0.21.3"
+editor:
+  name: "atomist-rugs.spring-boot-editors.SetSpringBootParentVersion"
+  group: "atomist-rugs"
+  artifact: "spring-boot-editors"
+  version: "0.5.0"
+  origin:
+    repo: "git@github.com:atomist-rugs/spring-boot-editors.git"
+    branch: "master"
+    sha: "eb0ac55"
+
