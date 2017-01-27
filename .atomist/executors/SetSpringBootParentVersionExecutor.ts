@@ -19,7 +19,7 @@ interface Parameters {
 
 var setSpringBootParentVersionExecutor: Executor = {
     description: "Set the Spring Boot version on the parent block in any pom in a project",
-    name: "SetSpringBootParentVersion",
+    name: "SetSpringBootParentVersionExecutor",
     tags: ["atomist/intent=set spring boot parent version", "atomist/private=false"],
     parameters: params,
     execute(services: Services, p:Parameters): Result {
