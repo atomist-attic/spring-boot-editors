@@ -9,6 +9,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 [Unreleased]: https://github.com/atomist-rugs/spring-boot-editors/compare/0.4.0...HEAD
 
+# [0.5.0] - 2017-01-27
+
+[0.5.0]: https://github.com/atomist-rugs/spring-boot-editors/compare/0.4.0...0.5.0
+
+### Added
+
+-   Added SetSpringBootParentVersion editor
+-   Added SetSpringBootParentVersionExecutor executor
+
 ## [0.4.0] - 2017-01-24
 
 [0.4.0]: https://github.com/atomist-rugs/spring-boot-editors/compare/0.3.0...0.4.0
