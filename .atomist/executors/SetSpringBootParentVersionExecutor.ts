@@ -25,7 +25,7 @@ var setSpringBootParentVersionExecutor: Executor = {
     parameters: params,
     execute(services: Services, p:Parameters): Result {
       for (let s of services.services()) {
-        s.editWith("SetSpringBootParentVersion", {spring_boot_version: p.spring_boot_version})
+        s.editWith("atomist-rugs.spring-boot-editors.SetSpringBootParentVersion", {spring_boot_version: p.spring_boot_version})
       }
       return new Result(Status.Success, "OK")
     }
