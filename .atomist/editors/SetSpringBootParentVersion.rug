@@ -23,8 +23,6 @@ editor SetSpringBootParentVersion
 @displayName "Spring Boot Version"
 @description "version of Spring Boot, e.g., 1.4.4.RELEASE"
 @validInput "a valid version of Spring Boot"
-@optional
-@default "1.4.4.RELEASE"
 param spring_boot_version: @any
 
 let default_spring_boot_parent_block = """

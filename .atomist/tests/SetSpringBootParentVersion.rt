@@ -16,19 +16,7 @@
 
 scenario SetSpringBootParentVersion should update the Spring Boot version
 
-given
-  ArchiveRoot
-
-when
-  SetSpringBootParentVersion
-
-then
-  fileContains "default-spring-boot-project/pom.xml" "<version>1.4.4.RELEASE</version>"
-
-
-scenario SetSpringBootParentVersion should update the Spring Boot version
-
-let spring_boot_version = "1.4.5.RELEASE"
+let spring_boot_version = "100.344246.234123"
 
 given
   ArchiveRoot
@@ -37,10 +25,12 @@ when
   SetSpringBootParentVersion
 
 then
-  fileContains "default-spring-boot-project/pom.xml" "<version>1.4.5.RELEASE</version>"
+  fileContains "default-spring-boot-project/pom.xml" "<version>100.344246.234123</version>"
 
 
 scenario SetSpringBootParentVersion should not update a pom that does not contain an existing Spring parent block
+
+let spring_boot_version = "100.344246.234123"
 
 given
   pom.xml = """
