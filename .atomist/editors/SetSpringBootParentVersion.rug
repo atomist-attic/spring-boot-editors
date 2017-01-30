@@ -38,5 +38,5 @@ let default_spring_boot_parent_block = """
 
 let version_set_parent_block = { default_spring_boot_parent_block.replace("<version>1.4.4.RELEASE</version>", "<version>" + spring_boot_version + "</version>") }
 
-with EveryPom ep when { ep.parentArtifactId().equals("spring-boot-starter-parent") }
+with EveryPom ep when parentArtifactId = "spring-boot-starter-parent"
   do replaceParent version_set_parent_block
